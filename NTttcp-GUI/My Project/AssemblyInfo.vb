@@ -9,10 +9,10 @@ Imports System.Runtime.InteropServices
 ' Review the values of the assembly attributes
 
 <Assembly: AssemblyTitle("NTttcp-GUI")>
-<Assembly: AssemblyDescription("")>
+<Assembly: AssemblyDescription("GUI interface for NTttcp")>
 <Assembly: AssemblyCompany("")>
 <Assembly: AssemblyProduct("NTttcp-GUI")>
-<Assembly: AssemblyCopyright("Copyright ©  2018")>
+<Assembly: AssemblyCopyright("Copyright © B3CKDOOR  2018")>
 <Assembly: AssemblyTrademark("")>
 
 <Assembly: ComVisible(False)>
