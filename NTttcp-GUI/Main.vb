@@ -1,18 +1,21 @@
 ﻿Public Class Main
 #Disable Warning BC40000 ' Type or member is obsolete
     Dim dataDirectory = Environment.CurrentDirectory
-    Dim executable = dataDirectory + "\NTttcp.exe"
+    Dim executable = dataDirectory + "\NTttcp.xexe"
 
     Private Sub BTNrun_Click(sender As Object, e As EventArgs) Handles BTNrun.Click
         BTNstop.Enabled = True
         BTNrun.Enabled = False
         BTNexit.Enabled = False
-        'Shell(executable)
+        On Error Resume Next
+        Shell(executable)
     End Sub
     Private Sub BTNstop_Click(sender As Object, e As EventArgs) Handles BTNstop.Click
         BTNrun.Enabled = True
         BTNstop.Enabled = False
         BTNexit.Enabled = True
+        On Error Resume Next
+        Shell("taskkill /F NTttcp.exe")
     End Sub
 
     Private Sub CHKsend_CheckedChanged(sender As Object, e As EventArgs) Handles CHKsend.CheckedChanged

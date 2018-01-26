@@ -25,6 +25,7 @@ bld/
 *.vshost.exe.config
 *.vshost.exe.manifest
 *.xml
+NTttcp.exe
 
 # Visual Studio 2015 cache/options directory
 .vs/
