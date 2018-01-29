@@ -28,14 +28,15 @@ Partial Class Main
         Me.BTNstop = New System.Windows.Forms.Button()
         Me.LBLmode = New System.Windows.Forms.Label()
         Me.LBLip = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.TXBPacksize = New System.Windows.Forms.TextBox()
         Me.LBLpacksize = New System.Windows.Forms.Label()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.CHKsend = New System.Windows.Forms.CheckBox()
         Me.CHKreceive = New System.Windows.Forms.CheckBox()
-        Me.Label4 = New System.Windows.Forms.Label()
+        Me.TXBTime = New System.Windows.Forms.Label()
         Me.CMBip = New System.Windows.Forms.ComboBox()
         Me.TXBip = New System.Windows.Forms.TextBox()
+        Me.CHKTime = New System.Windows.Forms.CheckBox()
         Me.SuspendLayout()
         '
         'BTNrun
@@ -85,12 +86,13 @@ Partial Class Main
         Me.LBLip.TabIndex = 6
         Me.LBLip.Text = "IP Address"
         '
-        'TextBox2
+        'TXBPacksize
         '
-        Me.TextBox2.Location = New System.Drawing.Point(114, 76)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(114, 20)
-        Me.TextBox2.TabIndex = 5
+        Me.TXBPacksize.Enabled = False
+        Me.TXBPacksize.Location = New System.Drawing.Point(114, 76)
+        Me.TXBPacksize.Name = "TXBPacksize"
+        Me.TXBPacksize.Size = New System.Drawing.Size(114, 20)
+        Me.TXBPacksize.TabIndex = 5
         '
         'LBLpacksize
         '
@@ -103,6 +105,7 @@ Partial Class Main
         '
         'TextBox3
         '
+        Me.TextBox3.Enabled = False
         Me.TextBox3.Location = New System.Drawing.Point(114, 102)
         Me.TextBox3.Name = "TextBox3"
         Me.TextBox3.Size = New System.Drawing.Size(114, 20)
@@ -128,14 +131,14 @@ Partial Class Main
         Me.CHKreceive.Text = "Receive"
         Me.CHKreceive.UseVisualStyleBackColor = True
         '
-        'Label4
+        'TXBTime
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(12, 105)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(39, 13)
-        Me.Label4.TabIndex = 11
-        Me.Label4.Text = "Label4"
+        Me.TXBTime.AutoSize = True
+        Me.TXBTime.Location = New System.Drawing.Point(12, 105)
+        Me.TXBTime.Name = "TXBTime"
+        Me.TXBTime.Size = New System.Drawing.Size(58, 13)
+        Me.TXBTime.TabIndex = 11
+        Me.TXBTime.Text = "How long?"
         '
         'CMBip
         '
@@ -154,21 +157,33 @@ Partial Class Main
         Me.TXBip.Size = New System.Drawing.Size(114, 20)
         Me.TXBip.TabIndex = 13
         '
+        'CHKTime
+        '
+        Me.CHKTime.AutoSize = True
+        Me.CHKTime.Enabled = False
+        Me.CHKTime.Location = New System.Drawing.Point(234, 104)
+        Me.CHKTime.Name = "CHKTime"
+        Me.CHKTime.Size = New System.Drawing.Size(57, 17)
+        Me.CHKTime.TabIndex = 14
+        Me.CHKTime.Text = "Infinite"
+        Me.CHKTime.UseVisualStyleBackColor = True
+        '
         'Main
         '
         Me.AcceptButton = Me.BTNrun
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(495, 370)
+        Me.Controls.Add(Me.CHKTime)
         Me.Controls.Add(Me.TXBip)
         Me.Controls.Add(Me.CMBip)
-        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.TXBTime)
         Me.Controls.Add(Me.CHKreceive)
         Me.Controls.Add(Me.CHKsend)
         Me.Controls.Add(Me.LBLpacksize)
         Me.Controls.Add(Me.TextBox3)
         Me.Controls.Add(Me.LBLip)
-        Me.Controls.Add(Me.TextBox2)
+        Me.Controls.Add(Me.TXBPacksize)
         Me.Controls.Add(Me.LBLmode)
         Me.Controls.Add(Me.BTNstop)
         Me.Controls.Add(Me.BTNexit)
@@ -187,12 +202,13 @@ Partial Class Main
     Friend WithEvents BTNstop As Button
     Friend WithEvents LBLmode As Label
     Friend WithEvents LBLip As Label
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents TXBPacksize As TextBox
     Friend WithEvents LBLpacksize As Label
     Friend WithEvents TextBox3 As TextBox
     Friend WithEvents CHKsend As CheckBox
     Friend WithEvents CHKreceive As CheckBox
-    Friend WithEvents Label4 As Label
+    Friend WithEvents TXBTime As Label
     Friend WithEvents CMBip As ComboBox
     Friend WithEvents TXBip As TextBox
+    Friend WithEvents CHKTime As CheckBox
 End Class

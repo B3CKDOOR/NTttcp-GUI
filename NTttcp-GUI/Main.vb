@@ -3,12 +3,32 @@
     ' Variables
     Dim dataDirectory = Environment.CurrentDirectory
     Dim executable = dataDirectory + "\NTttcp.exe"
-    Dim commandstring = ("")
+    Dim commandstring
 
     Private Sub BTNrun_Click(sender As Object, e As EventArgs) Handles BTNrun.Click
         BTNstop.Enabled = True
         BTNrun.Enabled = False
         BTNexit.Enabled = False
+
+        ' Set variables based on info / selected items
+        If CHKsend.Checked = False And CHKreceive.Checked = False Then
+            BTNstop_Click(sender, e)
+            MsgBox("Error: Please select either send or receive!")
+            Return
+        ElseIf CHKsend.Checked = True Then
+            'TODO Make string based on txtbox
+            Dim commandprepair = "/r"
+            Dim commandprepair1 = TXBip.Text
+            Dim commandprepair2 = TXBPacksize.Text
+
+            Throw New NotImplementedException
+            Return
+        ElseIf CHKreceive.Checked = True Then
+            'TODO Make string based on txtbox
+            Throw New NotImplementedException
+            Return
+        End If
+
         On Error Resume Next
         Shell(executable + commandstring)
     End Sub
