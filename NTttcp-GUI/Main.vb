@@ -1,14 +1,16 @@
 ﻿Public Class Main
 #Disable Warning BC40000 ' Type or member is obsolete
+    ' Variables
     Dim dataDirectory = Environment.CurrentDirectory
-    Dim executable = dataDirectory + "\NTttcp.xexe"
+    Dim executable = dataDirectory + "\NTttcp.exe"
+    Dim commandstring = ("")
 
     Private Sub BTNrun_Click(sender As Object, e As EventArgs) Handles BTNrun.Click
         BTNstop.Enabled = True
         BTNrun.Enabled = False
         BTNexit.Enabled = False
         On Error Resume Next
-        Shell(executable)
+        Shell(executable + commandstring)
     End Sub
     Private Sub BTNstop_Click(sender As Object, e As EventArgs) Handles BTNstop.Click
         BTNrun.Enabled = True
@@ -19,6 +21,7 @@
     End Sub
 
     Private Sub CHKsend_CheckedChanged(sender As Object, e As EventArgs) Handles CHKsend.CheckedChanged
+        ' Lock receive button if other option is selected to prevent double selection
         If CHKsend.Checked = True Then
             CHKreceive.Enabled = False
         Else
@@ -27,12 +30,15 @@
     End Sub
 
     Private Sub CHKreceive_CheckedChanged(sender As Object, e As EventArgs) Handles CHKreceive.CheckedChanged
+        ' Lock send button if other option is selected to prevent double selection
         If CHKreceive.Checked = True Then
             CHKsend.Enabled = False
         Else
             CHKsend.Enabled = True
         End If
 
+        ' Automatic obtain IP address from adapter
+        ' #DISABLE until made working correctly
 
         'Dim strHostName As String
         'Dim strIPAddress As String
